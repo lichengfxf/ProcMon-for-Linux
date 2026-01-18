@@ -231,6 +231,7 @@ target_link_libraries(procmon
                       ${PANELW6_LIBRARY}
                       elf
                       stdc++fs
+                      stdc++
                      )
 
 set(PACKED_BINARY_FILES
@@ -360,6 +361,7 @@ endforeach(EBPF_PROG)
 
 # Define the parse_syscalls target
 add_executable(getsyscalls getsyscalls/getsyscalls.cpp)
+target_link_libraries(getsyscalls stdc++)
 
 # Add a custom target to run parse_syscalls
 add_custom_target(run_getsyscalls
